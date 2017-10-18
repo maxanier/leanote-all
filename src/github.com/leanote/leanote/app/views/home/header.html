@@ -33,7 +33,7 @@ function log(o) {
 				<img src="/images/logo/leanote_black.png" class="hide" title="leanote, {{msg $ "moto"}}"/>
 			</a>
 		</div>
-		
+
 		<div id="navbar" class="navbar-collapse collapse">
 			<div id="lang">
 				<a data-lang="en-us">English</a>
@@ -47,17 +47,9 @@ function log(o) {
 
 			<ul class="nav navbar-nav navbar-left">
 				<li><a href="/index#" data-target="body" class="smooth-scroll">{{msg . "home"}}</a></li>
-				<li style="position: relative; margin-right: 3px;">
-					<a href="http://bbs.leanote.com" target="_blank" class="">{{msg . "discussion"}}</a>
-				</li>
 
-				<li><a id="leanoteBlog" href="http://lea.leanote.com" target="_blank" title="Leanote explore, leanote blog platform" class="">{{leaMsg . "Leanote Explore"}}</a></li>
-				<li><a id="leanoteApp" href="http://app.leanote.com" target="_blank" title="Leanote App" class="">{{msg . "desktopApp"}}</a></li>
-				<li>
-					<a href="http://leanote.org#donate" target="_blank" class="">{{msg . "donate"}}</a>
-				</li>
-
-				<li><a href="http://leanote.org" target="_blank" title="leanote.org" class="">leanote.org</a></li>
+				<li><a id="maxgb" href="https://maxgb.de/en" target="_blank" title="Homepage" class="">Maxgb.de</a></li>
+				<li><a id="maxanier" href="https://maxanier.de" target="_blank" title="Maxanier" class="">Maxanier.de</a></li>
 
 				{{if .userInfo.Email}}
 				<li id="loginBtns">
@@ -80,7 +72,7 @@ function log(o) {
 				</a>
 			</h1>
 		</div>
-	
+
 		<div class="pull-right" id="loginBtns">
 			{{if .userInfo.Email}}
 				{{msg . "hi"}}, {{.userInfo.Username}}
@@ -93,13 +85,13 @@ function log(o) {
 				{{end}}
 			{{end}}
 		</div>
-			
+
 		<ul id="blogNav" class="pull-right">
 			<li><a href="#" target="body" class="smooth-scroll">{{msg . "home"}}</a></li>
 			<li><a href="#download" target="#download" class="smooth-scroll">{{msg . "download"}}</a> </li>
 			<li><a href="#donate" target="#donate" class="smooth-scroll">{{msg . "donate"}}</a> </li>
 			<li><a id="leanoteBlog" href="{{.leaUrl}}/index" target="_blank" title="lea++, leanote博客平台" class="">lea++</a></li>
-			
+
 			<li style="position: relative; margin-right: 3px;">
 				<a href="http://bbs.leanote.com" target="_blank" class="">{{msg . "discussion"}}</a>
 				<div style="position: absolute;

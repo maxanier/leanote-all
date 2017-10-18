@@ -53,24 +53,24 @@ function getShareUrl() {
 	return location.href;
 }
 function getShareTitle(title) {
-	return encodeURI(title + " (from https://leanote.com)");
+	return encodeURI(title + " (from Leanote");
 }
 function shareSinaWeibo(noteId, title, pic) {
-	var url = "http://service.weibo.com/share/share.php?title=" + getShareTitle(title) + "&url=" + getShareUrl(noteId);
-	window.open(url, 'Share', windowParam);
+	//var url = "http://service.weibo.com/share/share.php?title=" + getShareTitle(title) + "&url=" + getShareUrl(noteId);
+	//window.open(url, 'Share', windowParam);
 }
 function shareTencentWeibo(noteId, title, pic) {
 	var _appkey = '801542571';
-	var url = "http://share.v.t.qq.com/index.php?c=share&a=index&appkey=" + _appkey +"&title=" + getShareTitle(title) + "&url=" + getShareUrl(noteId) +"&pic=" + pic;
-	window.open(url, 'Share', windowParam);
+	////var url = "http://share.v.t.qq.com/index.php?c=share&a=index&appkey=" + _appkey +"&title=" + getShareTitle(title) + "&url=" + getShareUrl(noteId) +"&pic=" + pic;
+	//window.open(url, 'Share', windowParam);
 }
 function shareQQ(noteId, title, pic) {
-	var url = 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + getShareUrl(noteId) + '&title=' + title + '&pics=' + pic;
-	window.open(url, 'Share', windowParam);
+	//var url = 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + getShareUrl(noteId) + '&title=' + title + '&pics=' + pic;
+	//window.open(url, 'Share', windowParam);
 }
 function shareRenRen(noteId, title, pic) {
-	var url = 'http://widget.renren.com/dialog/share?resourceUrl=' + getShareUrl(noteId) +  '&srcUrl=' + getShareUrl(noteId) + '&title=' + getShareTitle(title) + '&pic=' + pic;
-	window.open(url, 'Share', windowParam);
+	//var url = 'http://widget.renren.com/dialog/share?resourceUrl=' + getShareUrl(noteId) +  '&srcUrl=' + getShareUrl(noteId) + '&title=' + getShareTitle(title) + '&pic=' + pic;
+	//window.open(url, 'Share', windowParam);
 }
 
 // https://twitter.com/intent/tweet?text=&pic=
@@ -80,8 +80,8 @@ function shareTwitter(noteId, title, pic) {
 }
 // http://www.facebook.com/sharer.php?u=<?php the_permalink();?>&t=<?php the_title(); ?>” 
 function shareFacebook(noteId, title, pic) {
-	var url = ' http://www.facebook.com/sharer.php?t=' + getShareTitle(title) + '&pic=' + pic;
-	window.open(url, 'Share', windowParam);
+	//var url = ' http://www.facebook.com/sharer.php?t=' + getShareTitle(title) + '&pic=' + pic;
+	//window.open(url, 'Share', windowParam);
 }
 	
 

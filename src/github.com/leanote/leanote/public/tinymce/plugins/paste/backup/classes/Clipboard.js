@@ -370,7 +370,7 @@ define("tinymce/pasteplugin/Clipboard", [
 					var dom = editor.dom;
 					var d = {};						
 					d.id = '__mcenew';
-					d.src = "http://leanote.com/images/loading-24.gif"; // 写死了
+					d.src = "/images/loading-24.gif"; // 写死了
 					editor.insertContent(dom.createHTML('img', d));
 					var imgElm = dom.get('__mcenew');
 				    $.ajax({url: "/file/pasteImage", contentType:false, processData:false , data: c, type: "POST"}

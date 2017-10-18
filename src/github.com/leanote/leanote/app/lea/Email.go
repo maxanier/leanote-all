@@ -27,7 +27,7 @@ var bodyTpl = `
 			<div>
 				<div>
 					<div style="float:left; height: 40px;">
-						<a href="http://leanote.com" style="font-size: 24px">leanote</a>
+						<a href="https://notes.maxgb.de" style="font-size: 24px">Notes</a>
 					</div>
 					<div style="float:left; height:40px; line-height:40px;">
 						&nbsp;&nbsp;| &nbsp;<span style="font-size:14px">$title</span>
@@ -51,7 +51,7 @@ var bodyTpl = `
 						font-size: 12px;
 					}
 				</style>
-				<a href="http://leanote.com">leanote</a>, your own cloud note!
+			
 			</div>
 		</div>
 	</body>
