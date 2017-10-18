@@ -2,7 +2,7 @@
 
 <!-- 验证码 -->
 <script type="text/x-jsrender" id="tCaptcha">
-	<div class="form-group"> 
+	<div class="form-group">
 		<label class="control-label">{{rawMsg . "captcha"}}</label>
 	    <input type="text" class="form-control" id="captcha" name="captcha">
 	    <a id="reloadCaptcha" title="{{msg . "reloadCaptcha"}}" onclick="$('#captchaImage').attr('src', '/captcha/get?' + ((new Date()).getTime()))"><img src="/captcha/get" id="captchaImage"/></a>
@@ -23,38 +23,36 @@
 				<input id="from" type="hidden" value="{{.from}}" />
 				<div class="form-group">
 					<label class="control-label">{{msg . "usernameOrEmail"}}</label>
-					<input type="text" class="form-control" id="email" name="email" value="{{.email}}"> 
+					<input type="text" class="form-control" id="email" name="email" value="{{.email}}">
 				</div>
-				<div class="form-group"> 
+				<div class="form-group">
 					<label class="control-label">{{msg . "password"}}</label>
 				    <input type="password" class="form-control" id="pwd" name="pwd">
 				</div>
-				
+
 				<div id="captchaContainer">
-					
+
 				</div>
-				
+
 				<div class="clearfix">
 					<a href="/findPassword" class="pull-right m-t-xs"><small>{{msg . "forgetPassword"}}</small></a>
 					<button id="loginBtn" class="btn btn-success">{{msg . "login"}}</button>
 				</div>
 				<!--
 				<div class="line line-dashed"></div>
-				
+
 				<a href="#" id="github" class="btn btn-github btn-block m-b-sm"><i class="fa fa-github pull-left"></i>{{msg . "use"}} Github</a>
 				-->
-				
+
 				<div class="line line-dashed"></div>
-				
+
 				<p class="text-muted text-center"><small>{{msg . "hasAcount"}}</small></p>
-				
+
 				{{if .openRegister}}
 				<a href="/register" class="btn btn-default btn-block">{{msg . "register"}}</a>
 				{{msg . "or"}}
 				{{end}}
-				
-				<a id="loginBtn" href="/demo" class="btn btn-default btn-block">{{msg . "try"}}</a>
-			</form>	
+			</form>
 		</div>
     </div>
 </section>
@@ -74,11 +72,11 @@
 <script>
 $(function() {
 	var needCaptcha = {{.needCaptcha}};
-	
+
 	if(needCaptcha){
 		$("#captchaContainer").html($("#tCaptcha").html());
 	}
-	
+
 	$("#email").focus();
 	if($("#email").val()) {
 		$("#pwd").focus();
@@ -114,10 +112,10 @@ $(function() {
 			showMsg("{{msg . "inputCaptcha"}}", "captcha");
 			return;
 		}
-		
+
 		$("#loginBtn").html("{{msg . "logining"}}...").addClass("disabled");
 		// hideMsg();
-		
+
 		$.post("/doLogin", {email: email, pwd: pwd, captcha: $("#captcha").val()}, function(e) {
 			$("#loginBtn").html("{{msg . "login"}}").removeClass("disabled");
 			if(e.Ok) {
@@ -129,7 +127,7 @@ $(function() {
 					$("#captchaContainer").html($("#tCaptcha").html());
 					needCaptcha = true
 				}
-				
+
 				showMsg(e.Msg);
 			}
 		});
